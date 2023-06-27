@@ -1,36 +1,32 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * puts_half - prints half of a string
- * @str: prints the string
+ * puts_half - Prints the second half of a string
+ * @str: Pointer to the string
  *
+ * Description: This function takes a pointer to a string as parameter
+ * and prints the second half of the string, followed by a new line.
+ * If the number of characters is odd, it prints the last (n - 1) / 2 characters.
  */
 void puts_half(char *str)
 {
-	int i = 0;
+	int len = 0;
+	int n;
 
-	for (i = (_strlen(str) + 1) / 2; str[i] != '\0'; i++)
-{
-	_putchar(str[i]);
-}
+	while (str[len] != '\0')
+		len++;
 
-_putchar('\n');
-}
-/**
- * _strlen - length of a string
- * @s: the string to check
- *
- * Return: length of the string
- */
-int _strlen(char *s)
-{
-	int length;
+	if (len % 2 == 0)
+		n = len / 2;
+	else
+		n = (len + 1) / 2;
 
-	length = 0;
-
-	for (length = 0; *s != '\0'; s++)
+	while (str[n] != '\0')
 	{
-		length++;
+		_putchar(str[n]);
+		n++;
 	}
-	return (length);
+
+	_putchar('\n');
 }
+

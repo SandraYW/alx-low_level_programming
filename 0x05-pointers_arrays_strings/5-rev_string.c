@@ -1,29 +1,33 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * rev_string - reverse a string
- * @s: the string to reverse
+ * rev_string - Reverses a string
+ * @s: Pointer to the string
  *
+ * Description: This function takes a pointer to a string as parameter
+ * and reverses the string in place.
  */
-
 void rev_string(char *s)
 {
-	int length;
-	char *t = s;
-	int i;
+	char temp;
+	int len = 0;
+	char *start = s;
 
-	for (length = 0; *t != '\0'; t++)
-		length++;
-
-	t--;
-	length--;
-
-for (i = 0; i <= length / 2; i++)
+	while (*s != '\0')
 	{
-char tmp = *t;
-	*t = *s;
-	*s = tmp;
-	t--;
-	s++;
+		len++;
+		s++;
+	}
+
+	s--;
+
+	while (start < s)
+	{
+		temp = *start;
+		*start = *s;
+		*s = temp;
+		start++;
+		s--;
 	}
 }
+

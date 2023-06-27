@@ -1,19 +1,23 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * puts2- prints out every other character of a string
- * @str: the string to print
+ * puts2 - Prints every other character of a string
+ * @str: Pointer to the string
+ *
+ * Description: This function takes a pointer to a string as parameter
+ * and prints every other character of the string, followed by a new line.
  */
 void puts2(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; *str != '\0'; i++)
+	while (str[i] != '\0')
 	{
 		if (i % 2 == 0)
-			_putchar(*str);
-		str++;
+			_putchar(str[i]);
+		i++;
 	}
 
-_putchar('\n');
+	_putchar('\n');
 }
+
